@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>dummy</title>
+    <style>
+        .dummy:before {
+            content: var(--before-content, "FLAG{7h15_Is_dUMmY}");
+        }
+    </style>
+    <script>
+        function loadCssWithFallback() {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'css/style.css';
+            document.head.appendChild(link);
+            link.onerror = () => {
+                link.href = 'css/dummy.css';
+                document.head.appendChild(link);
+            };
+        }
+        loadCssWithFallback();
+    </script>
+    <!-- Where is style.css? -->
+</head>
+
+<body>
+    <p class="dummy" id="dummy"></p>
+    <p class="flag" id="flag"></p>
+</body>
+
+<script src="js/wasm_exec.js"></script>
+<script src="js/main.js"></script>

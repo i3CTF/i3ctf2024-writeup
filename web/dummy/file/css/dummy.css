@@ -1,0 +1,7 @@
+html{
+    font-family: sans-serif;
+}
+
+.dummy:before{
+    content: "FLAG{tHis_15_DuMmy}";
+}
